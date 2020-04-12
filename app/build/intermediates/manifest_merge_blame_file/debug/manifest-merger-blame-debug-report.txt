@@ -1,0 +1,66 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.chananya.OmerCount2"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="19"
+8-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="27" />
+9-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml
+10
+11    <application
+11-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:5:2-27:16
+12        android:allowBackup="true"
+12-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:6:3-29
+13        android:debuggable="true"
+14        android:icon="@drawable/app_icon"
+14-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:7:3-36
+15        android:label="ספירת העומר"
+15-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:8:3-30
+16        android:largeHeap="true"
+16-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:9:3-27
+17        android:supportsRtl="true"
+17-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:10:3-29
+18        android:testOnly="true"
+19        android:theme="@style/AppTheme" >
+19-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:11:3-34
+20        <activity
+20-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:12:3-21:14
+21            android:name="com.chananya.OmerCount2.MainActivity"
+21-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:13:4-32
+22            android:configChanges="orientation|screenSize"
+22-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:14:4-50
+23            android:screenOrientation="portrait" >
+23-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:15:4-40
+24            <intent-filter>
+24-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:16:4-20:20
+25                <action android:name="android.intent.action.MAIN" />
+25-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:17:5-57
+25-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:17:13-54
+26
+27                <category android:name="android.intent.category.LAUNCHER" />
+27-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:19:5-65
+27-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:19:15-62
+28            </intent-filter>
+29        </activity>
+30
+31        <receiver
+31-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:23:3-26:40
+32            android:name="com.chananya.OmerCount2.ReminderReceiver"
+32-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:24:4-36
+33            android:enabled="true"
+33-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:25:4-26
+34            android:exported="false" />
+34-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:26:4-28
+35
+36        <meta-data
+36-->[android.arch.lifecycle:runtime:1.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\6cdcbe6e98585c1769731dffe48395a9\runtime-1.0.0\AndroidManifest.xml:25:9-27:47
+37            android:name="android.arch.lifecycle.VERSION"
+37-->[android.arch.lifecycle:runtime:1.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\6cdcbe6e98585c1769731dffe48395a9\runtime-1.0.0\AndroidManifest.xml:26:13-58
+38            android:value="27.0.0-SNAPSHOT" />
+38-->[android.arch.lifecycle:runtime:1.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\6cdcbe6e98585c1769731dffe48395a9\runtime-1.0.0\AndroidManifest.xml:27:13-44
+39    </application>
+40
+41</manifest>

@@ -1,0 +1,120 @@
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+
+	<android.support.v7.widget.AppCompatTextView
+		android:id="@+id/date"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="#DCDADA"
+		android:gravity="center_horizontal"
+		android:padding="8dp"
+		android:text="תאריך"
+		android:textColor="#000000"
+		android:textSize="14sp"
+		android:textStyle="bold" />
+	<android.support.v7.widget.AppCompatTextView
+		android:id="@+id/noOmer"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:padding="8dp"
+		android:text="אין היום ספירת העומר"
+		android:textSize="24sp"
+		android:textStyle="bold"
+		android:textColor="#000000"
+		android:layout_gravity="center_horizontal"/>
+	
+	<ScrollView
+		android:id="@+id/vscroll1"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+		<LinearLayout
+			android:id="@+id/linear2"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:gravity="center_horizontal"
+			android:orientation="vertical">
+			<android.support.v7.widget.AppCompatTextView
+				android:id="@+id/leshem_yichud_tv"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:gravity="center_horizontal"
+				android:text="לשם ייחוד.."
+				android:textSize="14sp"
+				android:textColor="#000000"/>
+			<android.support.v7.widget.AppCompatTextView
+				android:id="@+id/beracha_tv"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:gravity="center_horizontal"
+				android:text="בָּרוּךְ אַתָּה ה' אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם, אֲשֶׁר קִדְּשָׁנוּ בְּמִצְוֹתָיו וְצִוָּנוּ עַל סְפִירַת הָעֹמֶר."
+				android:textSize="16sp"
+				android:textColor="#000000"/>
+			<android.support.v7.widget.AppCompatTextView
+				android:id="@+id/count_tv"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:gravity="center_horizontal"
+				android:text="היום"
+				android:textSize="25sp"
+				android:textColor="#000000"/>
+
+			<android.support.v7.widget.AppCompatTextView
+				android:id="@+id/harachaman"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center_horizontal"
+				android:padding="8dp"
+				android:text="הָרַחֲמָן הוּא יַחֲזִיר לָנוּ עֲבוֹדַת בֵּית הַמִּקְדָּשׁ לִמְקוֹמָהּ, בִּמְהֵרָה בְיָמֵינוּ, אָמֵן סֶלָה."
+				android:textColor="#000000"
+				android:textSize="16sp" />
+			<android.support.v7.widget.AppCompatTextView
+				android:id="@+id/lamnatzeach_tv"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:gravity="center_horizontal"
+				android:text="למנצח.."
+				android:textSize="18sp"
+				android:textColor="#000000"
+				android:layout_gravity="right"/>
+			<android.support.v7.widget.AppCompatTextView
+				android:id="@+id/ana_bekoach_tv"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:text="אנא בכוח.."
+				android:textSize="14sp"
+				android:textColor="#000000"
+				android:layout_gravity="right"/>
+			<android.support.v7.widget.AppCompatTextView
+				android:id="@+id/ribono_tv"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:paddingLeft="8dp"
+				android:paddingTop="8dp"
+				android:paddingRight="8dp"
+				android:gravity="center_horizontal"
+				android:text="ריבונו של עולם.."
+				android:textSize="16sp"
+				android:textColor="#000000"/>
+			<android.support.v7.widget.AppCompatCheckBox
+				android:id="@+id/checkbox1"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:text="קראתי היום!"
+				android:textSize="12sp"
+				android:textColor="#000000"
+				android:layout_gravity="center_horizontal"/>
+		</LinearLayout>
+	</ScrollView>
+</LinearLayout>

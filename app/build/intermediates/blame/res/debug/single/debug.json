@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "C:\\Chananya\\ProgrammingProjects\\Android\\OmerCount\\app\\build\\intermediates\\res\\merged\\debug\\layout_main.xml.flat",
+        "source": "C:\\Chananya\\ProgrammingProjects\\Android\\OmerCount\\app\\src\\main\\res\\layout\\main.xml"
+    },
+    {
+        "merged": "C:\\Chananya\\ProgrammingProjects\\Android\\OmerCount\\app\\build\\intermediates\\res\\merged\\debug\\font_gveretlevinalefalefalef_regular.ttf.flat",
+        "source": "C:\\Chananya\\ProgrammingProjects\\Android\\OmerCount\\app\\src\\main\\res\\font\\gveretlevinalefalefalef_regular.ttf"
+    },
+    {
+        "merged": "C:\\Chananya\\ProgrammingProjects\\Android\\OmerCount\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_app_icon_old.png.flat",
+        "source": "C:\\Chananya\\ProgrammingProjects\\Android\\OmerCount\\app\\src\\main\\res\\drawable-xhdpi\\app_icon_old.png"
+    },
+    {
+        "merged": "C:\\Chananya\\ProgrammingProjects\\Android\\OmerCount\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_app_icon.png.flat",
+        "source": "C:\\Chananya\\ProgrammingProjects\\Android\\OmerCount\\app\\src\\main\\res\\drawable-xhdpi\\app_icon.png"
+    },
+    {
+        "merged": "C:\\Chananya\\ProgrammingProjects\\Android\\OmerCount\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_default_image.png.flat",
+        "source": "C:\\Chananya\\ProgrammingProjects\\Android\\OmerCount\\app\\src\\main\\res\\drawable-xhdpi\\default_image.png"
+    },
+    {
+        "merged": "C:\\Chananya\\ProgrammingProjects\\Android\\OmerCount\\app\\build\\intermediates\\res\\merged\\debug\\font_gveretlevinalefalefalef.xml.flat",
+        "source": "C:\\Chananya\\ProgrammingProjects\\Android\\OmerCount\\app\\src\\main\\res\\font\\gveretlevinalefalefalef.xml"
+    }
+]
