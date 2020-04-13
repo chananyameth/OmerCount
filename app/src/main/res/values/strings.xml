@@ -1,3 +1,9 @@
 <resources>
-	<string	name="app_name"	translatable="false">ספירת העומר</string>
+	<string name="app_name" translatable="false">ספירת העומר</string>
+	<string name="relative_time">יחסית לשקיעה</string>
+	<string name="by_hour">בשעה קבועה</string>
+	<string name="activate_alarm">הפעל התראות</string>
+	<string name="settings">הגדרות</string>
+	<string name="help">עזרה</string>
+	<string name="later">מאוחר יותר</string>
 </resources>

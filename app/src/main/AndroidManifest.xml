@@ -9,6 +9,7 @@
 		android:largeHeap="true"
 		android:supportsRtl="true"
 		android:theme="@style/AppTheme">
+		<activity android:name=".SettingsActivity"></activity>
 		<activity
 			android:name=".MainActivity"
 			android:configChanges="orientation|screenSize"
@@ -23,7 +24,7 @@
 		<receiver
 			android:name=".ReminderReceiver"
 			android:enabled="true"
-			android:exported="false"></receiver>
+			android:exported="false" />
 	</application>
 
 </manifest>

@@ -8,6 +8,8 @@ import android.app.PendingIntent;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
@@ -60,6 +62,7 @@ public class MainActivity extends Activity
 	AlarmManager alarmManager;
 	private PendingIntent pendingIntent;
 	private static MainActivity inst;
+	private NotificationCreator nc;
 
 	public static MainActivity instance()
 	{
@@ -98,7 +101,7 @@ public class MainActivity extends Activity
 
 		DateToDisplay = Calendar.getInstance(timeZone);
 
-		//set service & notification
+		// set broadcastReceiver & notification
 		/*Calendar calendar = Calendar.getInstance();
 		calendar.set(Calendar.HOUR_OF_DAY, tzais.getHours());
 		calendar.set(Calendar.MINUTE, tzais.getMinutes());
@@ -125,6 +128,8 @@ public class MainActivity extends Activity
 		ribono_tv = (TextView) findViewById(R.id.ribono_tv);
 
 		checkbox1 = (CheckBox) findViewById(R.id.checkbox1);
+
+		nc = new NotificationCreator(this.getApplicationContext());
 
 		// listeners
 		date_tv.setOnClickListener(new View.OnClickListener()
@@ -200,63 +205,11 @@ public class MainActivity extends Activity
 
 	private void initializeLogic()
 	{
-/*		leshem_yichud = "לְשֵׁם יִחוּד קּוּדְשָׁא בְּרִיךְ הוּא וּשְׁכִינְתֵּיהּ בִּדְחִילוּ וּרְחִימוּ לְיַחֵד שֵׁם י\"ה בו\"ה בְּיִחוּדָא שְׁלִים בְּשֵׁם כָּל יִשְׂרָאֵל. הִנְּנִי מוּכָן וּמְזֻמָּן לְקַיֵּם מִצְוַת עֲשֵׂה שֶׁל סְפִירַת הָעֹמֶר כְּמוֹ שֶׁכָּתוּב בַּתּוֹרָה: וּסְפַרְתֶּם לָכֶם מִמָּחֳרַת הַשַּׁבָּת מִיּוֹם הֲבִיאֲכֶם אֶת עֹמֶר הַתְּנוּפָה שֶׁבַע שַׁבָּתוֹת תְּמִימוֹת תִּהְיֶינָה: עַד מִמָּחֳרָת הַשַּׁבָּת הַשְּׁבִיעִית תִּסְפְּרוּ חֲמִשִּׁים יוֹם.";
-		pre_lamnatzeach = "לַמְנַצֵּח בִּנְגִינֹת מִזְמוֹר שִׁיר. ";
-		lamnatzeach = "אֱלֹהִים יְחָנֵּנוּ וִיבָרְכֵנוּ יָאֵר פָּנָיו אִתָּנוּ סֶלָה. לָדַעַת בָּאָרֶץ דַּרְכֶּךָ בְּכָל גּוֹיִם יְשׁוּעָתֶךָ. יוֹדוּךָ עַמִּים אֱלֹהִים יוֹדוּךָ עַמִּים כֻּלָּם. יִשְׂמְחוּ וִירַנְּנוּ לְאֻמִּים כִּי תִשְׁפּ(וֹ)ט עַמִּים מִישׁוֹר וּלְאֻמִּים בָּאָרֶץ תַּנְחֵם סֶלָה. יוֹדוּךָ עַמִּים אֱלֹהִים יוֹדוּךָ עַמִּים כֻּלָּם. אֶרֶץ נָתְנָה יְבוּלָהּ יְבָרְכֵנוּ אֱלֹהִים אֱלֹהֵינוּ. יְבָרְכֵנוּ אֱלֹהִים וְיִירְאוּ אֹתוֹ כָּל אַפְסֵי אָרֶץ.";
-		ana_bekoach = "אָנָּא בְּכֹחַ גְּדֻלַּת יְמִינְךָ תַּתִּיר צְרוּרָה (אב\"ג ית\"ץ) \nקַבֵּל רִנַּת עַמְּךָ שַׂגְּבֵנוּ טַהֲרֵנוּ נוֹרָא (קר\"ע שט\"ן) \nנָא גִבּוֹר דּוֹרְשֵׁי יִחוּדְךָ כְּבָבַת שָׁמְרֵם (נג\"ד יכ\"ש) \nבָּרְכֵם טַהֲרֵם רַחֲמֵי צִדְקָתְךָ תָּמִיד גָּמְלֵם (בט\"ר צת\"ג) \nחֲסִין קָדוֹשׁ בְּרוֹב טוּבְךָ נַהֵל עֲדָתֶךָ (חק\"ב טנ\"ע) \nיָחִיד גֵּאֶה לְעַמְּךָ פְּנֵה זוֹכְרֵי קְדֻשָּׁתֶךָ (יג\"ל פז\"ק) \nשַׁוְעָתֵנוּ קַבֵּל וּשְׁמַע צַעֲקָתֵנוּ יוֹדֵעַ תַּעֲלוּמוֹת (שק\"ו צי\"ת) \nבָּרוּךְ שֵׁם כְּבוֹד מַלְכוּתוֹ לְעוֹלָם וָעֶד.";
-		ribono_1 = "רִבּוֹנוֹ שֶׁל עוֹלָם, אַתָּה צִוִּיתָנוּ עַל יְדֵי מֹשֶׁה עַבְדֶּךָ לִסְפֹּר סְפִירַת הָעֹמֶר כְּדֵי לְטַהֲרֵנוּ מִקְּלִפּוֹתֵינוּ וּמִטֻּמְאוֹתֵינוּ, כְּמוֹ שֶּׁכָּתַבְתָּ בְּתוֹרָתֶךָ: וּסְפַרְתֶּם לָכֶם מִמָּחֳרָת הַשַּׁבָּת מִיּוֹם הֲבִיאֲכֶם אֶת עֹמֶר הַתְּנוּפָה שֶׁבַע שַׁבָּתוֹת תְּמִימוֹת תִּהְיֶינָה: עַד מִמָּחֳרָת הַשַּׁבָּת הַשְּׁבִיעִית תִּסְפְּרוּ חֲמִשִּׁים יוֹם, כְּדֵי שֶׁיִּטָּהֲרוּ נַפְשׁוֹת עַמְּךָ יִשְׂרָאֵל מִזֻּהֲמָתָם. וּבְכֵן יְהִי רָצוֹן מִלְּפָנֶיךָ ה' אֱלֹהֵינוּ וֵאלֹהֵי אֲבוֹתֵינוּ, שֶׁבִּזְכוּת סְפִירַת הָעֹמֶר שֶׁסָּפַרְתִּי הַיּוֹם, יְתֻקַּן מַה שֶׁפָּגַמְתִּי בִּסְפִירָה:";
-
-		sefirot.clear();
-		sefirot.add("חֶסֶד");
-		sefirot.add("גְּבוּרָה");
-		sefirot.add("תִּפְאֶרֶת");
-		sefirot.add("נֵּצַח");
-		sefirot.add("הוֹד");
-		sefirot.add("יְסוֹד");
-		sefirot.add("מַלְכוּת");
-
-		//fonts
-		leshem_yichud_tv.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/font1.ttf"), Typeface.NORMAL);
-		beracha_tv.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/font1.ttf"), Typeface.NORMAL);
-		count_tv.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/font1.ttf"), Typeface.NORMAL);
-		harachaman.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/font1.ttf"), Typeface.NORMAL);
-		lamnatzeach_tv.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/font1.ttf"), Typeface.NORMAL);
-		ana_bekoach_tv.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/font1.ttf"), Typeface.NORMAL);
-		ribono_1_tv.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/font1.ttf"), Typeface.NORMAL);
-		sefira_tv.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/font1.ttf"), Typeface.NORMAL);
-		ribono_2_tv.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/font1.ttf"), Typeface.NORMAL);
-
-		leshem_yichud_tv.setText(leshem_yichud);
-		ana_bekoach_tv.setText(ana_bekoach);
-		ribono_1_tv.setText(ribono_1);
-*/
 		date_nav_mode = false;
 		skipSettingTzais = false;
 		is_d_open = false;
 		afterTzais = false;
 	}
-
-	/*private void _change_style(final TextView _tv, final String _start, final String _middle, final String _end)
-	{
-		SpannableStringBuilder builder = new SpannableStringBuilder();
-
-		android.text.style.ForegroundColorSpan fcs = new android.text.style.ForegroundColorSpan(Color.BLACK);
-		android.text.style.ForegroundColorSpan fcs1 = new android.text.style.ForegroundColorSpan(Color.RED);
-
-		SpannableString str1 = new SpannableString(_start);
-		str1.setSpan(fcs, 0, str1.length(), 0);
-		builder.append(str1);
-
-		SpannableString str2 = new SpannableString(_middle);
-		str2.setSpan(fcs1, 0, str2.length(), 0);
-		builder.append(str2);
-
-		SpannableString str3 = new SpannableString(_end);
-		str3.setSpan(fcs, 0, str3.length(), 0);
-		builder.append(str3);
-
-		_tv.setText(builder, TextView.BufferType.SPANNABLE);
-	}*/
 
 	private void dayChangedUpdateView()
 	{
@@ -313,142 +266,31 @@ public class MainActivity extends Activity
 		alarmManager.set(AlarmManager.RTC, calendar.getTimeInMillis(), pendingIntent);*/
 	}
 
-	//---------- HELPERS - SETTING UP & DECORATING TEXT ----------
-/*
-	private void _a_01_sefira()
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu)
 	{
-		str = "";
-		int day = (int) DayToDisplay;
-		String[] d = {"", "אחד ", "שני ", "שלושה ", "ארבעה ", "חמישה ", "שישה ", "שבעה ", "שמונה ", "תשעה ", "עשר ", "עשרים ", "שלושים ", "ארבעים "};
-		str += "היום ";
-		if (day == 1) str += "יום אחד ";
-		else if (day % 10 != 0) {
-			str += d[day % 10];
-			if (day > 10) {
-				if (day % 10 == 2) {
-					str = str.substring(0, str.length() - 1);
-					str += "ם ";
-				}
-				if (day > 20) str += "ו";
-			}
-		} else if (day == 10) str += "עשרה ";
-
-		if (1 < day && day < 11) str += "ימים ";
-		else if (10 < day) str += d[9 + day / 10] + "יום ";
-
-		if (6 < day) {
-			str += "שהם ";
-			if (day / 7 == 1) str += "שבוע אחד ";
-			else str += d[day / 7] + "שבועות ";
-
-			if (day % 7 != 0) {
-				str += "ו";
-				if (day % 7 == 1) str += "יום אחד ";
-				else str += d[day % 7] + "ימים ";
-			}
+		getMenuInflater().inflate(R.menu.mainmenu, menu);
+		return true;
+	}
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle item selection
+		switch (item.getItemId()) {
+			case R.id.settings:
+				Intent intent = new Intent(this, SettingsActivity.class);
+				startActivity(intent);
+				return true;
+			case R.id.help:
+				//showHelp();
+				return true;
+			default:
+				return super.onOptionsItemSelected(item);
 		}
-		str += "לעומר";
-		count_tv.setText(str);
 	}
 
-
-	private void _a_02_lamnatzeach()
+	public void Button1Click(View view)
 	{
-		separated = new ArrayList(Arrays.asList(lamnatzeach.split(" ")));
-		index = 0;
-		start = "";
-		end = "";
-		for (int _repeat14 = 0; _repeat14 < (int) (separated.size()); _repeat14++) {
-			if (index < (DayToDisplay - 1)) {
-				start = start.concat(separated.get((int) (index)).concat(" "));
-			} else {
-				if (index > (DayToDisplay - 1)) {
-					end = end.concat(separated.get((int) (index)).concat(" "));
-				} else {
-					middle = separated.get((int) (index)).concat(" ");
-				}
-			}
-			index++;
-		}
-		//----------------------------172---------81-------------------
-		SpannableStringBuilder builder = new SpannableStringBuilder();
-
-		android.text.style.ForegroundColorSpan fcs = new android.text.style.ForegroundColorSpan(Color.BLACK);
-		android.text.style.ForegroundColorSpan fcs1 = new android.text.style.ForegroundColorSpan(Color.RED);
-
-		SpannableString str1 = new SpannableString(start);
-		str1.setSpan(fcs, 0, str1.length(), 0);
-		builder.append(str1);
-
-		SpannableString str2 = new SpannableString(middle);
-		str2.setSpan(fcs1, 0, str2.length(), 0);
-		builder.append(str2);
-
-		SpannableString str3 = new SpannableString(end);
-		str3.setSpan(fcs, 0, str3.length(), 0);
-		builder.append(str3);
-		index = 0;
-		first_letter = -1;
-		helper = 81;
-		for (int _repeat64 = 0; _repeat64 < (int) (lamnatzeach.length()); _repeat64++) {
-			temp = (int) lamnatzeach.charAt((int) index);
-			//showMessage(String.valueOf((int)lamnatzeach.charAt((int)index)));
-			if ((temp < 1488) || (1514 < temp)) {
-				helper++;
-			}
-			if ((index == (DayToDisplay + helper)) && (first_letter == -1)) {
-				first_letter = index;
-			}
-			if (index == ((DayToDisplay + helper) + 1)) {
-				break;
-			}
-			index++;
-		}
-		if ((DayToDisplay == 21) || (DayToDisplay == 22)) {
-			index--;
-		}
-		SpannableStringBuilder builder1 = new SpannableStringBuilder();
-
-		android.text.style.BackgroundColorSpan fcs2 = new android.text.style.BackgroundColorSpan(Color.GREEN);
-		android.text.style.ForegroundColorSpan fcs3 = new android.text.style.ForegroundColorSpan(Color.GREEN);
-
-		SpannableString str4 = new SpannableString(pre_lamnatzeach);
-		str4.setSpan(fcs, 0, str4.length(), 0);
-		builder1.append(str4);
-
-		SpannableString str5 = new SpannableString(builder);
-		str5.setSpan(fcs3, (int) first_letter, (int) index, 0);
-		builder1.append(str5);
-
-		lamnatzeach_tv.setText(builder1, TextView.BufferType.SPANNABLE);
+		//nc.create("Hello", "world! this is a very very very very very long long long text, and more text.......");
+		nc.create("Hello", "world! this is a short text");
 	}
-
-
-	private void _a_03_ana_bekoach()
-	{
-		separated = new ArrayList(Arrays.asList(ana_bekoach.split(" ")));
-		index = 0;
-		start = "";
-		end = "";
-		for (int _repeat15 = 0; _repeat15 < (int) (separated.size()); _repeat15++) {
-			if (index < (DayToDisplay - 1)) {
-				start = start.concat(separated.get((int) (index)).concat(" "));
-			} else {
-				if (index > (DayToDisplay - 1)) {
-					end = end.concat(separated.get((int) (index)).concat(" "));
-				} else {
-					middle = separated.get((int) (index)).concat(" ");
-				}
-			}
-			index++;
-		}
-		_change_style(ana_bekoach_tv, start, middle, end);
-	}
-
-
-	private void _a_04_kabala()
-	{
-		sefira_tv.setText(sefirot.get((int) ((DayToDisplay - 1) % 7)).concat(" שֶׁבַּ".concat(sefirot.get((int) ((DayToDisplay - 1) / 7)))));
-	}
-	*/
 }

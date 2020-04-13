@@ -20,6 +20,10 @@
         "source": "C:\\Chananya\\ProgrammingProjects\\Android\\OmerCount\\app\\src\\main\\res\\drawable-xhdpi\\default_image.png"
     },
     {
+        "merged": "C:\\Chananya\\ProgrammingProjects\\Android\\OmerCount\\app\\build\\intermediates\\res\\merged\\debug\\menu_mainmenu.xml.flat",
+        "source": "C:\\Chananya\\ProgrammingProjects\\Android\\OmerCount\\app\\src\\main\\res\\menu\\mainmenu.xml"
+    },
+    {
         "merged": "C:\\Chananya\\ProgrammingProjects\\Android\\OmerCount\\app\\build\\intermediates\\res\\merged\\debug\\font_gveretlevinalefalefalef.xml.flat",
         "source": "C:\\Chananya\\ProgrammingProjects\\Android\\OmerCount\\app\\src\\main\\res\\font\\gveretlevinalefalefalef.xml"
     }
