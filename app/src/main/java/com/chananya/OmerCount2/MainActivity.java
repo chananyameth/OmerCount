@@ -272,8 +272,10 @@ public class MainActivity extends Activity
 		getMenuInflater().inflate(R.menu.mainmenu, menu);
 		return true;
 	}
+
 	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
+	public boolean onOptionsItemSelected(MenuItem item)
+	{
 		// Handle item selection
 		switch (item.getItemId()) {
 			case R.id.settings:

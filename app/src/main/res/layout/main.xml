@@ -113,7 +113,7 @@
 				android:text="ריבונו של עולם.."
 				android:textSize="16sp"
 				android:textColor="#000000"/>
-			<android.support.v7.widget.AppCompatCheckBox
+			<CheckBox
 				android:id="@+id/checkbox1"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"

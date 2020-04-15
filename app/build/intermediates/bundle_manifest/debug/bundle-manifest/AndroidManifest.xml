@@ -17,6 +17,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.chananya.OmerCount2.SettingsActivity" />
         <activity
             android:name="com.chananya.OmerCount2.MainActivity"
             android:configChanges="orientation|screenSize"

@@ -14,6 +14,10 @@ public class ReminderReceiver extends BroadcastReceiver
 		{
 
 		}
+		else if(intent.getAction() == NotificationCreator.ACTION_COUNTED)
+		{
+
+		}
 		else if(intent.getAction() == NotificationCreator.ACTION_NOTIFY)
 		{
 

@@ -11,7 +11,7 @@
 9-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml
 10
 11    <application
-11-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:5:2-27:16
+11-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:5:2-28:16
 12        android:allowBackup="true"
 12-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:6:3-29
 13        android:debuggable="true"
@@ -26,41 +26,44 @@
 18        android:testOnly="true"
 19        android:theme="@style/AppTheme" >
 19-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:11:3-34
-20        <activity
-20-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:12:3-21:14
-21            android:name="com.chananya.OmerCount2.MainActivity"
-21-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:13:4-32
-22            android:configChanges="orientation|screenSize"
-22-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:14:4-50
-23            android:screenOrientation="portrait" >
-23-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:15:4-40
-24            <intent-filter>
-24-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:16:4-20:20
-25                <action android:name="android.intent.action.MAIN" />
-25-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:17:5-57
-25-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:17:13-54
-26
-27                <category android:name="android.intent.category.LAUNCHER" />
-27-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:19:5-65
-27-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:19:15-62
-28            </intent-filter>
-29        </activity>
-30
-31        <receiver
-31-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:23:3-26:40
-32            android:name="com.chananya.OmerCount2.ReminderReceiver"
-32-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:24:4-36
-33            android:enabled="true"
-33-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:25:4-26
-34            android:exported="false" />
-34-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:26:4-28
-35
-36        <meta-data
-36-->[android.arch.lifecycle:runtime:1.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\6cdcbe6e98585c1769731dffe48395a9\runtime-1.0.0\AndroidManifest.xml:25:9-27:47
-37            android:name="android.arch.lifecycle.VERSION"
-37-->[android.arch.lifecycle:runtime:1.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\6cdcbe6e98585c1769731dffe48395a9\runtime-1.0.0\AndroidManifest.xml:26:13-58
-38            android:value="27.0.0-SNAPSHOT" />
-38-->[android.arch.lifecycle:runtime:1.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\6cdcbe6e98585c1769731dffe48395a9\runtime-1.0.0\AndroidManifest.xml:27:13-44
-39    </application>
-40
-41</manifest>
+20        <activity android:name="com.chananya.OmerCount2.SettingsActivity" />
+20-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:12:3-57
+20-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:12:13-45
+21        <activity
+21-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:13:3-22:14
+22            android:name="com.chananya.OmerCount2.MainActivity"
+22-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:14:4-32
+23            android:configChanges="orientation|screenSize"
+23-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:15:4-50
+24            android:screenOrientation="portrait" >
+24-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:16:4-40
+25            <intent-filter>
+25-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:17:4-21:20
+26                <action android:name="android.intent.action.MAIN" />
+26-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:18:5-57
+26-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:18:13-54
+27
+28                <category android:name="android.intent.category.LAUNCHER" />
+28-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:20:5-65
+28-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:20:15-62
+29            </intent-filter>
+30        </activity>
+31
+32        <receiver
+32-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:24:3-27:31
+33            android:name="com.chananya.OmerCount2.ReminderReceiver"
+33-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:25:4-36
+34            android:enabled="true"
+34-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:26:4-26
+35            android:exported="false" />
+35-->C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:27:4-28
+36
+37        <meta-data
+37-->[android.arch.lifecycle:runtime:1.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\6cdcbe6e98585c1769731dffe48395a9\runtime-1.0.0\AndroidManifest.xml:25:9-27:47
+38            android:name="android.arch.lifecycle.VERSION"
+38-->[android.arch.lifecycle:runtime:1.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\6cdcbe6e98585c1769731dffe48395a9\runtime-1.0.0\AndroidManifest.xml:26:13-58
+39            android:value="27.0.0-SNAPSHOT" />
+39-->[android.arch.lifecycle:runtime:1.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\6cdcbe6e98585c1769731dffe48395a9\runtime-1.0.0\AndroidManifest.xml:27:13-44
+40    </application>
+41
+42</manifest>

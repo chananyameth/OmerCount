@@ -1,10 +1,11 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:2:1-29:12
+ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:2:1-30:12
 MERGED from [com.android.support:appcompat-v7:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\18f7404f3240b5e8e9e3e74abe334c8a\appcompat-v7-27.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\8b2d15c4ca873aafdeee9719604de4db\constraint-layout-1.1.3\AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:support-fragment:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\0b4bb45f4974849f6a11e3ea720d6110\support-fragment-27.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-utils:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\c6e2a9c788f5c86ed7bc3d654922b5cb\support-core-utils-27.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:animated-vector-drawable:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\d97b4a284abe8c345600ab674085b34b\animated-vector-drawable-27.0.0\AndroidManifest.xml:17:1-22:12
@@ -12,25 +13,27 @@ MERGED from [com.android.support:support-vector-drawable:27.0.0] C:\Users\Chanan
 MERGED from [com.android.support:support-core-ui:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\e9cd7c62bd1f747bb0c9a86b2e2663c9\support-core-ui-27.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-compat:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\a737791f7221e5b16c329c469ec99618\support-compat-27.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\6cdcbe6e98585c1769731dffe48395a9\runtime-1.0.0\AndroidManifest.xml:17:1-30:12
-INJECTED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:2:1-29:12
+INJECTED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:2:1-30:12
 	package
 		ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:3:2-35
 		INJECTED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml
-		ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:2:1-29:12
+		ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:2:1-30:12
 		INJECTED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml
-		ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:2:1-29:12
+		ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:2:1-30:12
 		INJECTED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:5:2-27:16
+ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:5:2-28:16
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\8b2d15c4ca873aafdeee9719604de4db\constraint-layout-1.1.3\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\8b2d15c4ca873aafdeee9719604de4db\constraint-layout-1.1.3\AndroidManifest.xml:9:5-20
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\6cdcbe6e98585c1769731dffe48395a9\runtime-1.0.0\AndroidManifest.xml:24:5-28:19
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\6cdcbe6e98585c1769731dffe48395a9\runtime-1.0.0\AndroidManifest.xml:24:5-28:19
 	android:supportsRtl
@@ -45,38 +48,44 @@ MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Chananya\.gradle\cac
 		ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:6:3-29
 	android:theme
 		ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:11:3-34
+activity#com.chananya.OmerCount2.SettingsActivity
+ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:12:3-57
+	android:name
+		ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:12:13-45
 activity#com.chananya.OmerCount2.MainActivity
-ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:12:3-21:14
+ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:13:3-22:14
 	android:screenOrientation
-		ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:15:4-40
+		ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:16:4-40
 	android:configChanges
-		ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:14:4-50
+		ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:15:4-50
 	android:name
-		ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:13:4-32
+		ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:14:4-32
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:16:4-20:20
+ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:17:4-21:20
 action#android.intent.action.MAIN
-ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:17:5-57
+ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:18:5-57
 	android:name
-		ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:17:13-54
+		ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:18:13-54
 category#android.intent.category.LAUNCHER
-ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:19:5-65
+ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:20:5-65
 	android:name
-		ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:19:15-62
+		ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:20:15-62
 receiver#com.chananya.OmerCount2.ReminderReceiver
-ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:23:3-26:40
+ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:24:3-27:31
 	android:enabled
-		ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:25:4-26
+		ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:26:4-26
 	android:exported
-		ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:26:4-28
+		ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:27:4-28
 	android:name
-		ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:24:4-36
+		ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:25:4-36
 uses-sdk
 INJECTED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml
 INJECTED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml
 MERGED from [com.android.support:appcompat-v7:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\18f7404f3240b5e8e9e3e74abe334c8a\appcompat-v7-27.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:appcompat-v7:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\18f7404f3240b5e8e9e3e74abe334c8a\appcompat-v7-27.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\8b2d15c4ca873aafdeee9719604de4db\constraint-layout-1.1.3\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\8b2d15c4ca873aafdeee9719604de4db\constraint-layout-1.1.3\AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support:support-fragment:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\0b4bb45f4974849f6a11e3ea720d6110\support-fragment-27.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\0b4bb45f4974849f6a11e3ea720d6110\support-fragment-27.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-core-utils:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\c6e2a9c788f5c86ed7bc3d654922b5cb\support-core-utils-27.0.0\AndroidManifest.xml:20:5-44
