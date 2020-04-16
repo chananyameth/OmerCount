@@ -29,16 +29,10 @@ import java.util.TimeZone;
 
 public class MainActivity extends Activity
 {
-	//variables
-	private int dayToDisplay = 0;
-	private Calendar DateToDisplay;
-	private boolean afterTzais; //after tzais, before chatzos. so add 1 to DayToDisplay
-	private OmerTexts texts;
-
 	//UI elements
 	private TextView date_tv;
 	private TextView noOmer;
-	private ScrollView vscroll1;
+	private ScrollView texts_vs;
 	private TextView leshem_yichud_tv;
 	private TextView beracha_tv;
 	private TextView hayom_tv;
@@ -47,6 +41,24 @@ public class MainActivity extends Activity
 	private TextView ana_bekoach_tv;
 	private TextView ribono_tv;
 	private CheckBox checkbox1;
+
+	//Other classes
+	private JewishTimes times;
+	private OmerTexts texts;
+
+	//navigation mode
+	private boolean isNavMode;
+	private Calendar navDate;
+
+	private AlertDialog.Builder dialog;
+
+
+	//-----------------------------remove vars from here down------------
+
+	//variables
+	private int dayToDisplay = 0;
+	private Calendar DateToDisplay;
+	private boolean afterTzais; //after tzais, before chatzos. so add 1 to DayToDisplay
 
 	//zmanim
 	private ComplexZmanimCalendar czc;
@@ -77,14 +89,15 @@ public class MainActivity extends Activity
 		setContentView(R.layout.main);
 		inst = this;
 
-		initializeTimes();
+		//initializeTimes();
 		initialize(_savedInstanceState);
-		initializeLogic();
+		//initializeLogic();
 
-		dayChangedUpdateView();
+		//dayChangedUpdateView();
+		determineShowDialog();
 	}
 
-	private void initializeTimes()
+	/*private void initializeTimes()
 	{
 		jc = new JewishCalendar();
 		hdf = new HebrewDateFormatter();
@@ -102,22 +115,23 @@ public class MainActivity extends Activity
 		DateToDisplay = Calendar.getInstance(timeZone);
 
 		// set broadcastReceiver & notification
-		/*Calendar calendar = Calendar.getInstance();
-		calendar.set(Calendar.HOUR_OF_DAY, tzais.getHours());
-		calendar.set(Calendar.MINUTE, tzais.getMinutes());
-		Intent myIntent = new Intent(MainActivity.this, NotifyReceiver.class);
-		pendingIntent = PendingIntent.getBroadcast(MainActivity.this, 0, myIntent, 0);
-		alarmManager.set(AlarmManager.RTC, calendar.getTimeInMillis(), pendingIntent);*/
-	}
+		//Calendar calendar = Calendar.getInstance();
+		//calendar.set(Calendar.HOUR_OF_DAY, tzais.getHours());
+		//calendar.set(Calendar.MINUTE, tzais.getMinutes());
+		//Intent myIntent = new Intent(MainActivity.this, NotifyReceiver.class);
+		//pendingIntent = PendingIntent.getBroadcast(MainActivity.this, 0, myIntent, 0);
+		//alarmManager.set(AlarmManager.RTC, calendar.getTimeInMillis(), pendingIntent);
+	}*/
 
 	private void initialize(Bundle _savedInstanceState)
 	{
 		texts = new OmerTexts(getApplicationContext(), dayToDisplay);
+		times = new JewishTimes();
 
 		// views
 		date_tv = (TextView) findViewById(R.id.date);
 		noOmer = (TextView) findViewById(R.id.noOmer);
-		vscroll1 = (ScrollView) findViewById(R.id.vscroll1);
+		texts_vs = (ScrollView) findViewById(R.id.texts_vs);
 
 		leshem_yichud_tv = (TextView) findViewById(R.id.leshem_yichud_tv);
 		beracha_tv = (TextView) findViewById(R.id.beracha_tv);
@@ -131,6 +145,9 @@ public class MainActivity extends Activity
 
 		nc = new NotificationCreator(this.getApplicationContext());
 
+		isNavMode = false;
+		navDate = times.nowC();
+
 		// listeners
 		date_tv.setOnClickListener(new View.OnClickListener()
 		{
@@ -142,14 +159,13 @@ public class MainActivity extends Activity
 					@Override
 					public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth)
 					{
-						DateToDisplay.set(Calendar.YEAR, year);
-						DateToDisplay.set(Calendar.MONTH, monthOfYear);
-						DateToDisplay.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-
-						date_nav_mode = true;
-						dayChangedUpdateView();
+						navDate.set(Calendar.YEAR, year);
+						navDate.set(Calendar.MONTH, monthOfYear);
+						navDate.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+						isNavMode = true;
+						updateView(false);
 					}
-				}, DateToDisplay.get(Calendar.YEAR), DateToDisplay.get(Calendar.MONTH), DateToDisplay.get(Calendar.DAY_OF_MONTH));
+				}, navDate.get(Calendar.YEAR), navDate.get(Calendar.MONTH), navDate.get(Calendar.DAY_OF_MONTH));
 				datePickerDialog.show();
 			}
 		});
@@ -159,17 +175,17 @@ public class MainActivity extends Activity
 			public void onClick(View _view)
 			{
 				if (dayToDisplay == 49) {
-					Toast.makeText(getApplicationContext(), "leap", Toast.LENGTH_SHORT);
-					DateToDisplay.add(Calendar.DAY_OF_MONTH, -48); //subtract 48 days - back to start
+					toast(getString(R.string.leap));
+					navDate.add(Calendar.DAY_OF_MONTH, -48); //subtract 48 days - back to start
 				} else {
-					DateToDisplay.add(Calendar.DAY_OF_MONTH, 1); //add a day
+					navDate.add(Calendar.DAY_OF_MONTH, 1); //add a day
 				}
-				date_nav_mode = true;
-				dayChangedUpdateView();
+				isNavMode = true;
+				updateView(false);
 			}
 		});
 
-		d = new AlertDialog.Builder(this);
+		/*d = new AlertDialog.Builder(this);
 		d.setCancelable(false)
 				.setMessage("כעת אנו קרובים למעבר בין הימים. להציג את היום העובר, או את היום החדש?")
 				.setPositiveButton("היום העובר", new DialogInterface.OnClickListener()
@@ -200,18 +216,41 @@ public class MainActivity extends Activity
 						dayChangedUpdateView();
 					}
 				})
+				.create();*/
+
+		dialog = new AlertDialog.Builder(this);
+		dialog.setCancelable(false)
+				.setMessage(getString(R.string.tzais_warning))
+				.setPositiveButton(getString(R.string.past_day), new DialogInterface.OnClickListener()
+				{
+					@Override
+					public void onClick(DialogInterface dlg, int id)
+					{
+						toast(getString(R.string.past_day));
+						updateView(false);
+					}
+				})
+				.setNegativeButton(getString(R.string.new_day), new DialogInterface.OnClickListener()
+				{
+					@Override
+					public void onClick(DialogInterface dlg, int id)
+					{
+						toast(getString(R.string.new_day));
+						updateView(true);
+					}
+				})
 				.create();
 	}
 
-	private void initializeLogic()
+	/*private void initializeLogic()
 	{
 		date_nav_mode = false;
 		skipSettingTzais = false;
 		is_d_open = false;
 		afterTzais = false;
-	}
+	}*/
 
-	private void dayChangedUpdateView()
+	/*private void dayChangedUpdateView()
 	{
 		Date now = new Date();
 
@@ -243,7 +282,7 @@ public class MainActivity extends Activity
 
 		if (0 < day && day < 50) {
 			noOmer.setVisibility(View.GONE);
-			vscroll1.setVisibility(View.VISIBLE);
+			texts_vs.setVisibility(View.VISIBLE);
 			dayToDisplay = day;
 			texts.setDay(day);
 
@@ -255,17 +294,19 @@ public class MainActivity extends Activity
 			ana_bekoach_tv.setText(texts.getAna_bekoach());
 			ribono_tv.setText(texts.getRibono());
 		} else {
-			vscroll1.setVisibility(View.GONE);
+			texts_vs.setVisibility(View.GONE);
 			noOmer.setVisibility(View.VISIBLE);
 		}
 		skipSettingTzais = false;
 
-		/*Calendar calendar = Calendar.getInstance();
-		Intent myIntent = new Intent(MainActivity.this, NotifyReceiver.class);
-		pendingIntent = PendingIntent.getBroadcast(MainActivity.this, 0, myIntent, 0);
-		alarmManager.set(AlarmManager.RTC, calendar.getTimeInMillis(), pendingIntent);*/
-	}
+		//Calendar calendar = Calendar.getInstance();
+		//Intent myIntent = new Intent(MainActivity.this, NotifyReceiver.class);
+		//pendingIntent = PendingIntent.getBroadcast(MainActivity.this, 0, myIntent, 0);
+		//alarmManager.set(AlarmManager.RTC, calendar.getTimeInMillis(), pendingIntent);
+	}*/
 
+
+	// ----------------------new--------------
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu)
 	{
@@ -279,7 +320,7 @@ public class MainActivity extends Activity
 		// Handle item selection
 		switch (item.getItemId()) {
 			case R.id.settings:
-				Intent intent = new Intent(this, SettingsActivity.class);
+				Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
 				startActivity(intent);
 				return true;
 			case R.id.help:
@@ -294,5 +335,55 @@ public class MainActivity extends Activity
 	{
 		//nc.create("Hello", "world! this is a very very very very very long long long text, and more text.......");
 		nc.create("Hello", "world! this is a short text");
+	}
+
+	private void determineShowDialog()
+	{
+		if (isNavMode) {
+			updateView(false);
+		} else {
+			if (times.isNowCloseToTzais(1000 * 60 * 30)) // half hour before or after Tzais
+				dialog.show();
+			else
+				updateView(times.isNowAfterTzais());
+		}
+	}
+
+	private void updateView(boolean afterTzais)
+	{
+		int day;
+
+		if (isNavMode)
+			day = times.getOmerCount(navDate.getTime(), afterTzais);
+		else
+			day = times.getNowOmerCount(afterTzais);
+
+		if (afterTzais)
+			date_tv.setText("אור ליום " + times.formatDayOfWeek(times.tommorowOf(navDate)) + " " + times.format(times.tommorowOf(navDate)));
+		else
+			date_tv.setText("יום " + times.formatDayOfWeek(navDate) + " " + times.format(navDate));
+
+		if (0 < day && day < 50) {
+			noOmer.setVisibility(View.GONE);
+			texts_vs.setVisibility(View.VISIBLE);
+
+			texts.setDay(day);
+
+			leshem_yichud_tv.setText(texts.getLeshem_yichud());
+			beracha_tv.setText(texts.getBeracha());
+			hayom_tv.setText(texts.getHayom());
+			harachaman_tv.setText(texts.getHarachaman());
+			lamnatzeach_tv.setText(texts.getLamnatzeach());
+			ana_bekoach_tv.setText(texts.getAna_bekoach());
+			ribono_tv.setText(texts.getRibono());
+		} else {
+			texts_vs.setVisibility(View.GONE);
+			noOmer.setVisibility(View.VISIBLE);
+		}
+	}
+
+	private void toast(String s)
+	{
+		Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
 	}
 }

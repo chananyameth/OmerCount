@@ -7,4 +7,8 @@
 	<string name="help">עזרה</string>
 	<string name="later">מאוחר יותר</string>
 	<string name="mark_as_counted">ספרתי</string>
+	<string name="tzais_warning">כעת אנו קרובים למעבר בין הימים. להציג את היום העובר, או את היום החדש?</string>
+	<string name="past_day">היום העובר</string>
+	<string name="new_day">היום החדש</string>
+	<string name="leap">בחזרה להתחלה</string>
 </resources>

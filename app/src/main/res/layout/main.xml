@@ -26,6 +26,7 @@
 		android:textStyle="bold" />
 	<android.support.v7.widget.AppCompatTextView
 		android:id="@+id/noOmer"
+		android:visibility="gone"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:padding="8dp"
@@ -36,7 +37,8 @@
 		android:layout_gravity="center_horizontal"/>
 	
 	<ScrollView
-		android:id="@+id/vscroll1"
+		android:id="@+id/texts_vs"
+		android:visibility="gone"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent">
 		<LinearLayout
@@ -61,7 +63,7 @@
 				android:layout_height="wrap_content"
 				android:padding="8dp"
 				android:gravity="center_horizontal"
-				android:text="בָּרוּךְ אַתָּה ה' אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם, אֲשֶׁר קִדְּשָׁנוּ בְּמִצְוֹתָיו וְצִוָּנוּ עַל סְפִירַת הָעֹמֶר."
+				android:text="ברכה.."
 				android:textSize="16sp"
 				android:textColor="#000000"/>
 			<android.support.v7.widget.AppCompatTextView
@@ -70,7 +72,7 @@
 				android:layout_height="wrap_content"
 				android:padding="8dp"
 				android:gravity="center_horizontal"
-				android:text="היום"
+				android:text="היום.."
 				android:textSize="25sp"
 				android:textColor="#000000"/>
 
@@ -80,7 +82,7 @@
 				android:layout_height="wrap_content"
 				android:gravity="center_horizontal"
 				android:padding="8dp"
-				android:text="הָרַחֲמָן הוּא יַחֲזִיר לָנוּ עֲבוֹדַת בֵּית הַמִּקְדָּשׁ לִמְקוֹמָהּ, בִּמְהֵרָה בְיָמֵינוּ, אָמֵן סֶלָה."
+				android:text="הרחמן.."
 				android:textColor="#000000"
 				android:textSize="16sp" />
 			<android.support.v7.widget.AppCompatTextView

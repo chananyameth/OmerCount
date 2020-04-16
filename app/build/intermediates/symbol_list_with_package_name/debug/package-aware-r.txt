@@ -768,6 +768,7 @@ id text
 id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
+id texts_vs
 id time
 id title
 id titleDividerNoCustom
@@ -777,7 +778,6 @@ id topPanel
 id uniform
 id up
 id useLogo
-id vscroll1
 id withText
 id wrap
 id wrap_content
@@ -860,10 +860,15 @@ string app_name
 string by_hour
 string help
 string later
+string leap
+string mark_as_counted
+string new_day
+string past_day
 string relative_time
 string search_menu_title
 string settings
 string status_bar_notification_info_overflow
+string tzais_warning
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog

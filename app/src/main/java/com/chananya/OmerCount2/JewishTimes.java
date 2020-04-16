@@ -24,8 +24,8 @@ public class JewishTimes
 	public JewishTimes()
 	{
 		czc = new ComplexZmanimCalendar(SettingsActivity.getLocation());
-		jc = new JewishCalendar(now());
-		jd = new JewishDate(now());
+		jc = new JewishCalendar(nowD());
+		jd = new JewishDate(nowD());
 		hdf = new HebrewDateFormatter();
 		hdf.setHebrewFormat(true);
 
@@ -45,36 +45,57 @@ public class JewishTimes
 		czc.setCalendar(Calendar.getInstance(SettingsActivity.getLocation().getTimeZone()));
 		return czc;
 	}
-	private Date now()
+
+	public Date nowD()
 	{
 		return Calendar.getInstance(SettingsActivity.getLocation().getTimeZone()).getTime();
 	}
 
+	public Calendar nowC()
+	{
+		return Calendar.getInstance(SettingsActivity.getLocation().getTimeZone());
+	}
+
+	public Calendar tommorowOf(Calendar c)
+	{
+		Calendar temp = c;
+		temp.add(Calendar.DAY_OF_MONTH, 1);
+		return temp;
+	}
+
 	public boolean isNowCloseToTzais(int deltaDifferenceMillis)
 	{
-		return abs(getTzais().getTime() - now().getTime())
+		return abs(getTzais().getTime() - nowD().getTime())
 				< deltaDifferenceMillis;
 	}
+
 	public Date getTzais()
 	{
 		return getCzc().getTzaisGeonim6Point45Degrees();
 	}
+
 	public boolean isNowAfterTzais()
 	{
-		return getTzais().compareTo(now()) > 0;
+		return getTzais().compareTo(nowD()) > 0;
 	}
-	public int getNowOmerCount()
+
+	public int getNowOmerCount(boolean afterTzais)
 	{
-		jc.setDate(now());
-		return jc.getDayOfOmer(); // returns -1 if it isn't day of omer
+		return getOmerCount(nowD(), afterTzais); // returns -1 if it isn't day of omer
 	}
+
 	public int getOmerCount(Date d, boolean afterSunset)
 	{
 		jc.setDate(d);
 		int omer = jc.getDayOfOmer() + (afterSunset ? 1 : 0);
-		if(omer < 1 || 49 < omer)
+		if (omer < 1 || 49 < omer)
 			omer = -1;
 		return omer;
+	}
+
+	public String formatDayOfWeek(Calendar c)
+	{
+		return formatDayOfWeek(c.getTime());
 	}
 
 	public String formatDayOfWeek(Date d)
@@ -82,6 +103,12 @@ public class JewishTimes
 		jd.setDate(d);
 		return hdf.formatDayOfWeek(jd);
 	}
+
+	public String format(Calendar c)
+	{
+		return format(c.getTime());
+	}
+
 	public String format(Date d)
 	{
 		jd.setDate(d);

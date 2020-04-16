@@ -7,4 +7,8 @@
 	<string name="help">Help</string>
 	<string name="later">Later</string>
 	<string name="mark_as_counted">Counted</string>
+	<string name="tzais_warning">Now wer\'e close to Tzais Hacokhavim. Show the past day, or the new day?</string>
+	<string name="past_day">past day</string>
+	<string name="new_day">new day</string>
+	<string name="leap">back to start</string>
 </resources>
