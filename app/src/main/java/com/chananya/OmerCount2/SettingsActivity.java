@@ -3,6 +3,7 @@ package com.chananya.OmerCount2;
 import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 import net.sourceforge.zmanim.util.GeoLocation;
 
@@ -27,5 +28,9 @@ public class SettingsActivity extends Activity
 		TimeZone timeZone = TimeZone.getTimeZone("Israel");
 		GeoLocation location = new GeoLocation(locationName, latitude, longitude, elevation, timeZone);
 		return location;
+	}
+
+	public void onRadioButtonClicked(View view)
+	{
 	}
 }

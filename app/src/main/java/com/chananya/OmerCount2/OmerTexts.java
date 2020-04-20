@@ -13,6 +13,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -35,8 +36,6 @@ public class OmerTexts
 	private String[] sefirot;
 	private Context context;
 
-	//--------------
-
 	public OmerTexts(Context _cont, int _day)
 	{
 		setDay(_day);
@@ -48,20 +47,21 @@ public class OmerTexts
 
 	private String loadJSONFromAsset()
 	{
-		String json = null;
+		String json;
 		try {
 			InputStream is = context.getAssets().open("Texts.json");
 			int size = is.available();
 			byte[] buffer = new byte[size];
 			is.read(buffer);
 			is.close();
-			json = new String(buffer, "UTF-8");
+			json = new String(buffer, StandardCharsets.UTF_8);
 		} catch (IOException ex) {
 			ex.printStackTrace();
 			return null;
 		}
 		return json;
 	}
+
 	private void readFile()
 	{
 		try {
@@ -89,9 +89,10 @@ public class OmerTexts
 			e.printStackTrace();
 		}
 	}
+
 	void setDay(int _day)
 	{
-		if(_day < 1 || 49 < _day)
+		if (_day < 1 || 49 < _day)
 			_day = 1;
 		day = _day;
 	}
@@ -131,16 +132,18 @@ public class OmerTexts
 
 		return str;
 	}
+
 	private String sheba()
 	{
 		if (day < 1 || day > 49)
 			day = 1;
 		return sefirot[(day - 1) % 7] + sheba + sefirot[(day - 1) / 7];
 	}
+
 	private SpannableStringBuilder lamnatzeach()
 	{
 		ArrayList<String> separated = new ArrayList(Arrays.asList(lamnatzeach.split(" ")));
-		String beggining = "";
+		String beginning = "";
 		String today_word = "";
 		String end = "";
 
@@ -150,7 +153,7 @@ public class OmerTexts
 		// split by word
 		for (int i = 0; i < separated.size(); i++) {
 			if (i < day - 1)
-				beggining = beggining.concat(separated.get(i).concat(" "));
+				beginning = beginning.concat(separated.get(i).concat(" "));
 			else if (i > day - 1)
 				end = end.concat(separated.get(i).concat(" "));
 			else
@@ -164,7 +167,7 @@ public class OmerTexts
 		ForegroundColorSpan fcs_green = new ForegroundColorSpan(Color.GREEN);
 		BackgroundColorSpan bcs_green = new BackgroundColorSpan(Color.GREEN);
 
-		SpannableString str1 = new SpannableString(beggining);
+		SpannableString str1 = new SpannableString(beginning);
 		str1.setSpan(fcs_black, 0, str1.length(), 0);
 		builder.append(str1);
 
@@ -199,14 +202,14 @@ public class OmerTexts
 			if (i == day + helper + 1) {
 				break;
 			}
-		} // i now is the index of the *end* of today_letter (plus nikud)
+		}
+		letter_end = i; // i now is the index of the *end* of today_letter (plus nikud)
 
 		if ((day == 21) || (day == 22)) { // those 2 days' letters include unnecessary parenthesis: Tishp(o)t
-			i--;
+			letter_end--;
 		}
-		letter_end = i;
 
-		builder.setSpan(fcs_green, letter_beggining, i, 0);
+		builder.setSpan(fcs_green, letter_beggining, letter_end, 0);
 
 		// add the first pasuk
 		builder.insert(0, pre_lamnatzeach, 0, pre_lamnatzeach.length());
@@ -214,6 +217,7 @@ public class OmerTexts
 
 		return builder;
 	}
+
 	private SpannableStringBuilder ana_bekoach()
 	{
 		ArrayList<String> separated = new ArrayList(Arrays.asList(ana_bekoach.split(" ")));
@@ -255,26 +259,32 @@ public class OmerTexts
 	{
 		return leshem_yichud;
 	}
+
 	public String getBeracha()
 	{
 		return beracha;
 	}
+
 	public String getHayom()
 	{
 		return hayom();
 	}
+
 	public String getHarachaman()
 	{
 		return harachaman;
 	}
+
 	public SpannableStringBuilder getLamnatzeach()
 	{
 		return lamnatzeach();
 	}
+
 	public SpannableStringBuilder getAna_bekoach()
 	{
 		return ana_bekoach();
 	}
+
 	public String getRibono()
 	{
 		return ribono_1 + " " + sheba() + " " + ribono_2;

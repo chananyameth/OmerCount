@@ -19,8 +19,6 @@ public class JewishTimes
 	private JewishDate jd;
 	private HebrewDateFormatter hdf;
 
-	private Date dateToDisplay;
-
 	public JewishTimes()
 	{
 		czc = new ComplexZmanimCalendar(SettingsActivity.getLocation());
@@ -28,16 +26,6 @@ public class JewishTimes
 		jd = new JewishDate(nowD());
 		hdf = new HebrewDateFormatter();
 		hdf.setHebrewFormat(true);
-
-		// TODO: move to settings class - make static functions
-		{
-			String locationName = "Jerusalem, IL";
-			double latitude = 31.771959; // Jerusalem, IL
-			double longitude = 35.217018; // Jerusalem, IL
-			double elevation = 798; // optional elevation correction in Meters
-			TimeZone timeZone = TimeZone.getTimeZone("Israel");
-			GeoLocation location = new GeoLocation(locationName, latitude, longitude, elevation, timeZone);
-		}
 	}
 
 	private ComplexZmanimCalendar getCzc()
@@ -58,7 +46,7 @@ public class JewishTimes
 
 	public Calendar tommorowOf(Calendar c)
 	{
-		Calendar temp = c;
+		Calendar temp = (Calendar) c.clone();
 		temp.add(Calendar.DAY_OF_MONTH, 1);
 		return temp;
 	}
@@ -76,7 +64,7 @@ public class JewishTimes
 
 	public boolean isNowAfterTzais()
 	{
-		return getTzais().compareTo(nowD()) > 0;
+		return getTzais().compareTo(nowD()) < 0;
 	}
 
 	public int getNowOmerCount(boolean afterTzais)

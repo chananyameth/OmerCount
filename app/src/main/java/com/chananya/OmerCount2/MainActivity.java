@@ -1,10 +1,8 @@
 package com.chananya.OmerCount2;
 
 import android.app.Activity;
-import android.app.AlarmManager;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
-import android.app.PendingIntent;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,15 +15,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import net.sourceforge.zmanim.ComplexZmanimCalendar;
-import net.sourceforge.zmanim.hebrewcalendar.HebrewDateFormatter;
-import net.sourceforge.zmanim.hebrewcalendar.JewishCalendar;
-import net.sourceforge.zmanim.hebrewcalendar.JewishDate;
-import net.sourceforge.zmanim.util.GeoLocation;
-
 import java.util.Calendar;
-import java.util.Date;
-import java.util.TimeZone;
 
 public class MainActivity extends Activity
 {
@@ -42,44 +32,15 @@ public class MainActivity extends Activity
 	private TextView ribono_tv;
 	private CheckBox checkbox1;
 
-	//Other classes
-	private JewishTimes times;
-	private OmerTexts texts;
-
 	//navigation mode
 	private boolean isNavMode;
 	private Calendar navDate;
 
-	private AlertDialog.Builder dialog;
-
-
-	//-----------------------------remove vars from here down------------
-
-	//variables
-	private int dayToDisplay = 0;
-	private Calendar DateToDisplay;
-	private boolean afterTzais; //after tzais, before chatzos. so add 1 to DayToDisplay
-
-	//zmanim
-	private ComplexZmanimCalendar czc;
-	private JewishCalendar jc;
-	private HebrewDateFormatter hdf;
-	private Date tzais; //tzais haKochavim by rav Tucazinsky
-	private boolean date_nav_mode; //navigating between date manually, so doesn't have 'or le..'
-	private boolean skipSettingTzais;
-
-	//components
-	private AlertDialog.Builder d;
-	private boolean is_d_open = false;
-	AlarmManager alarmManager;
-	private PendingIntent pendingIntent;
-	private static MainActivity inst;
+	//Other classes
+	private JewishTimes times;
+	private OmerTexts texts;
 	private NotificationCreator nc;
-
-	public static MainActivity instance()
-	{
-		return inst;
-	}
+	private AlertDialog.Builder dialog;
 
 	@Override
 	protected void onCreate(Bundle _savedInstanceState)
@@ -87,45 +48,14 @@ public class MainActivity extends Activity
 		super.onCreate(_savedInstanceState);
 		getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
 		setContentView(R.layout.main);
-		inst = this;
 
-		//initializeTimes();
 		initialize(_savedInstanceState);
-		//initializeLogic();
-
-		//dayChangedUpdateView();
 		determineShowDialog();
 	}
 
-	/*private void initializeTimes()
-	{
-		jc = new JewishCalendar();
-		hdf = new HebrewDateFormatter();
-		hdf.setHebrewFormat(true);
-
-		String locationName = "Jerusalem, IL";
-		double latitude = 31.771959; // Jerusalem, IL
-		double longitude = 35.217018; // Jerusalem, IL
-		double elevation = 798; // optional elevation correction in Meters
-		TimeZone timeZone = TimeZone.getTimeZone("Israel");
-		GeoLocation location = new GeoLocation(locationName, latitude, longitude, elevation, timeZone);
-		czc = new ComplexZmanimCalendar(location); //default to today's date
-		tzais = czc.getTzaisGeonim6Point45Degrees();
-
-		DateToDisplay = Calendar.getInstance(timeZone);
-
-		// set broadcastReceiver & notification
-		//Calendar calendar = Calendar.getInstance();
-		//calendar.set(Calendar.HOUR_OF_DAY, tzais.getHours());
-		//calendar.set(Calendar.MINUTE, tzais.getMinutes());
-		//Intent myIntent = new Intent(MainActivity.this, NotifyReceiver.class);
-		//pendingIntent = PendingIntent.getBroadcast(MainActivity.this, 0, myIntent, 0);
-		//alarmManager.set(AlarmManager.RTC, calendar.getTimeInMillis(), pendingIntent);
-	}*/
-
 	private void initialize(Bundle _savedInstanceState)
 	{
-		texts = new OmerTexts(getApplicationContext(), dayToDisplay);
+		texts = new OmerTexts(getApplicationContext(), 1); // _day=1 just for initialization. any way gets set to the right date before using
 		times = new JewishTimes();
 
 		// views
@@ -157,10 +87,10 @@ public class MainActivity extends Activity
 				DatePickerDialog datePickerDialog = new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener()
 				{
 					@Override
-					public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth)
+					public void onDateSet(DatePicker view, int year, int month, int dayOfMonth)
 					{
 						navDate.set(Calendar.YEAR, year);
-						navDate.set(Calendar.MONTH, monthOfYear);
+						navDate.set(Calendar.MONTH, month);
 						navDate.set(Calendar.DAY_OF_MONTH, dayOfMonth);
 						isNavMode = true;
 						updateView(false);
@@ -169,12 +99,13 @@ public class MainActivity extends Activity
 				datePickerDialog.show();
 			}
 		});
+
 		hayom_tv.setOnClickListener(new View.OnClickListener()
 		{
 			@Override
 			public void onClick(View _view)
 			{
-				if (dayToDisplay == 49) {
+				if (times.getOmerCount(navDate.getTime(), false) == 49) {
 					toast(getString(R.string.leap));
 					navDate.add(Calendar.DAY_OF_MONTH, -48); //subtract 48 days - back to start
 				} else {
@@ -184,39 +115,6 @@ public class MainActivity extends Activity
 				updateView(false);
 			}
 		});
-
-		/*d = new AlertDialog.Builder(this);
-		d.setCancelable(false)
-				.setMessage("כעת אנו קרובים למעבר בין הימים. להציג את היום העובר, או את היום החדש?")
-				.setPositiveButton("היום העובר", new DialogInterface.OnClickListener()
-				{
-					@Override
-					public void onClick(DialogInterface dlg, int id)
-					{
-						//previous day
-						is_d_open = false;
-						skipSettingTzais = true;
-
-						afterTzais = false;
-						Toast.makeText(getApplicationContext(), "היום העובר", Toast.LENGTH_SHORT).show();
-						dayChangedUpdateView();
-					}
-				})
-				.setNegativeButton("היום החדש", new DialogInterface.OnClickListener()
-				{
-					@Override
-					public void onClick(DialogInterface dlg, int id)
-					{
-						//new day
-						is_d_open = false;
-						skipSettingTzais = true;
-
-						afterTzais = true;
-						Toast.makeText(getApplicationContext(), "היום החדש", Toast.LENGTH_SHORT).show();
-						dayChangedUpdateView();
-					}
-				})
-				.create();*/
 
 		dialog = new AlertDialog.Builder(this);
 		dialog.setCancelable(false)
@@ -242,71 +140,6 @@ public class MainActivity extends Activity
 				.create();
 	}
 
-	/*private void initializeLogic()
-	{
-		date_nav_mode = false;
-		skipSettingTzais = false;
-		is_d_open = false;
-		afterTzais = false;
-	}*/
-
-	/*private void dayChangedUpdateView()
-	{
-		Date now = new Date();
-
-		if (!skipSettingTzais) {
-			afterTzais = (tzais.compareTo(now) < 0);
-			//now let the user choose to change afterTzais or leave it as it is
-			if (!date_nav_mode && !is_d_open && (tzais.getTime() - now.getTime()) < 3600000 && (tzais.getTime() - now.getTime()) > 0)    // 1000*60*60 = 3,600,000 -> within 1 hour before tzais
-			{
-				is_d_open = true;
-				d.show();
-				//Toast.makeText(getApplicationContext(), "Test Toast - should appear after dialog closed" , Toast.LENGTH_SHORT).show();
-			}
-		}
-
-		if (!date_nav_mode && afterTzais) //adjusting DateToDisplay to be the right hebrew date
-		{
-			DateToDisplay.setTime(now);
-			DateToDisplay.add(Calendar.DAY_OF_MONTH, 1);
-		}
-
-		jc.setDate(DateToDisplay);
-		int day = jc.getDayOfOmer();
-
-		JewishDate jdt = new JewishDate(DateToDisplay);
-		if (!date_nav_mode && afterTzais)
-			date_tv.setText("אור ליום " + hdf.formatDayOfWeek(jdt) + " " + hdf.format(jdt));
-		else
-			date_tv.setText("יום " + hdf.formatDayOfWeek(jdt) + " " + hdf.format(jdt));
-
-		if (0 < day && day < 50) {
-			noOmer.setVisibility(View.GONE);
-			texts_vs.setVisibility(View.VISIBLE);
-			dayToDisplay = day;
-			texts.setDay(day);
-
-			leshem_yichud_tv.setText(texts.getLeshem_yichud());
-			beracha_tv.setText(texts.getBeracha());
-			hayom_tv.setText(texts.getHayom());
-			harachaman_tv.setText(texts.getHarachaman());
-			lamnatzeach_tv.setText(texts.getLamnatzeach());
-			ana_bekoach_tv.setText(texts.getAna_bekoach());
-			ribono_tv.setText(texts.getRibono());
-		} else {
-			texts_vs.setVisibility(View.GONE);
-			noOmer.setVisibility(View.VISIBLE);
-		}
-		skipSettingTzais = false;
-
-		//Calendar calendar = Calendar.getInstance();
-		//Intent myIntent = new Intent(MainActivity.this, NotifyReceiver.class);
-		//pendingIntent = PendingIntent.getBroadcast(MainActivity.this, 0, myIntent, 0);
-		//alarmManager.set(AlarmManager.RTC, calendar.getTimeInMillis(), pendingIntent);
-	}*/
-
-
-	// ----------------------new--------------
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu)
 	{
@@ -342,7 +175,7 @@ public class MainActivity extends Activity
 		if (isNavMode) {
 			updateView(false);
 		} else {
-			if (times.isNowCloseToTzais(1000 * 60 * 30)) // half hour before or after Tzais
+			if (times.isNowCloseToTzais(1000 * 60 * 30)) // half an hour before or after Tzais
 				dialog.show();
 			else
 				updateView(times.isNowAfterTzais());

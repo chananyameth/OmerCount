@@ -14,15 +14,24 @@
 		android:layout_height="wrap_content"
 		android:text="@string/activate_alarm" />
 
-	<RadioButton
-		android:id="@+id/by_hour"
+	<RadioGroup
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:text="@string/by_hour" />
-	<RadioButton
-		android:id="@+id/relative_time"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:text="@string/relative_time" />
+		android:orientation="vertical">
+
+		<RadioButton
+			android:id="@+id/by_hour"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="@string/by_hour"
+			android:onClick="onRadioButtonClicked" />
+		<RadioButton
+			android:id="@+id/relative_time"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="@string/relative_time"
+			android:onClick="onRadioButtonClicked" />
+	</RadioGroup>
+
 
 </LinearLayout>
