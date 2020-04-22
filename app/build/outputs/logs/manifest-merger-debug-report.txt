@@ -4,15 +4,15 @@ ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\Androi
 INJECTED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:2:1-32:12
 INJECTED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:2:1-32:12
 INJECTED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:2:1-32:12
-MERGED from [com.android.support:appcompat-v7:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\18f7404f3240b5e8e9e3e74abe334c8a\appcompat-v7-27.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\8b2d15c4ca873aafdeee9719604de4db\constraint-layout-1.1.3\AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:support-fragment:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\0b4bb45f4974849f6a11e3ea720d6110\support-fragment-27.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-utils:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\c6e2a9c788f5c86ed7bc3d654922b5cb\support-core-utils-27.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:animated-vector-drawable:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\d97b4a284abe8c345600ab674085b34b\animated-vector-drawable-27.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-vector-drawable:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\bb1a56bfa0d099fac5590adb046030d4\support-vector-drawable-27.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-ui:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\e9cd7c62bd1f747bb0c9a86b2e2663c9\support-core-ui-27.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-compat:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\a737791f7221e5b16c329c469ec99618\support-compat-27.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\6cdcbe6e98585c1769731dffe48395a9\runtime-1.0.0\AndroidManifest.xml:17:1-30:12
+MERGED from [com.android.support:appcompat-v7:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\04b41d4ea4e1238e822cc4d720a9b614\appcompat-v7-27.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\31618e85a1ab477facc7c89af7d6d786\constraint-layout-1.1.3\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-fragment:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\9acfdd820837dac8733d112a7b19f759\support-fragment-27.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\acfe204ecd1682e0ed9986d1fb956cc3\support-core-utils-27.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\3c7c15fb4224092204ceb6237d0ea67d\animated-vector-drawable-27.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\ac862848829105005790ff74ab6095bc\support-vector-drawable-27.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\716723fe24b62615a6f5910a5e581615\support-core-ui-27.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\30a62641a02784f21323d5f8a3f4404c\support-compat-27.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\43ebd292d9bef8dc77a0d6f73311b1c6\runtime-1.0.0\AndroidManifest.xml:17:1-30:12
 INJECTED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:2:1-32:12
 INJECTED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:2:1-32:12
 INJECTED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:2:1-32:12
@@ -32,10 +32,10 @@ INJECTED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\And
 		ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:2:11-69
 application
 ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:5:2-30:16
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\8b2d15c4ca873aafdeee9719604de4db\constraint-layout-1.1.3\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\8b2d15c4ca873aafdeee9719604de4db\constraint-layout-1.1.3\AndroidManifest.xml:9:5-20
-MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\6cdcbe6e98585c1769731dffe48395a9\runtime-1.0.0\AndroidManifest.xml:24:5-28:19
-MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\6cdcbe6e98585c1769731dffe48395a9\runtime-1.0.0\AndroidManifest.xml:24:5-28:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\31618e85a1ab477facc7c89af7d6d786\constraint-layout-1.1.3\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\31618e85a1ab477facc7c89af7d6d786\constraint-layout-1.1.3\AndroidManifest.xml:9:5-20
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\43ebd292d9bef8dc77a0d6f73311b1c6\runtime-1.0.0\AndroidManifest.xml:24:5-28:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\43ebd292d9bef8dc77a0d6f73311b1c6\runtime-1.0.0\AndroidManifest.xml:24:5-28:19
 	android:supportsRtl
 		ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:10:3-29
 	android:label
@@ -82,24 +82,24 @@ uses-sdk
 INJECTED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml
 INJECTED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml
-MERGED from [com.android.support:appcompat-v7:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\18f7404f3240b5e8e9e3e74abe334c8a\appcompat-v7-27.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\18f7404f3240b5e8e9e3e74abe334c8a\appcompat-v7-27.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\8b2d15c4ca873aafdeee9719604de4db\constraint-layout-1.1.3\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\8b2d15c4ca873aafdeee9719604de4db\constraint-layout-1.1.3\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:support-fragment:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\0b4bb45f4974849f6a11e3ea720d6110\support-fragment-27.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\0b4bb45f4974849f6a11e3ea720d6110\support-fragment-27.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\c6e2a9c788f5c86ed7bc3d654922b5cb\support-core-utils-27.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\c6e2a9c788f5c86ed7bc3d654922b5cb\support-core-utils-27.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\d97b4a284abe8c345600ab674085b34b\animated-vector-drawable-27.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\d97b4a284abe8c345600ab674085b34b\animated-vector-drawable-27.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\bb1a56bfa0d099fac5590adb046030d4\support-vector-drawable-27.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\bb1a56bfa0d099fac5590adb046030d4\support-vector-drawable-27.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\e9cd7c62bd1f747bb0c9a86b2e2663c9\support-core-ui-27.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\e9cd7c62bd1f747bb0c9a86b2e2663c9\support-core-ui-27.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\a737791f7221e5b16c329c469ec99618\support-compat-27.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\a737791f7221e5b16c329c469ec99618\support-compat-27.0.0\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\6cdcbe6e98585c1769731dffe48395a9\runtime-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\6cdcbe6e98585c1769731dffe48395a9\runtime-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.android.support:appcompat-v7:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\04b41d4ea4e1238e822cc4d720a9b614\appcompat-v7-27.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\04b41d4ea4e1238e822cc4d720a9b614\appcompat-v7-27.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\31618e85a1ab477facc7c89af7d6d786\constraint-layout-1.1.3\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\31618e85a1ab477facc7c89af7d6d786\constraint-layout-1.1.3\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-fragment:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\9acfdd820837dac8733d112a7b19f759\support-fragment-27.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\9acfdd820837dac8733d112a7b19f759\support-fragment-27.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\acfe204ecd1682e0ed9986d1fb956cc3\support-core-utils-27.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\acfe204ecd1682e0ed9986d1fb956cc3\support-core-utils-27.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\3c7c15fb4224092204ceb6237d0ea67d\animated-vector-drawable-27.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\3c7c15fb4224092204ceb6237d0ea67d\animated-vector-drawable-27.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\ac862848829105005790ff74ab6095bc\support-vector-drawable-27.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\ac862848829105005790ff74ab6095bc\support-vector-drawable-27.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\716723fe24b62615a6f5910a5e581615\support-core-ui-27.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\716723fe24b62615a6f5910a5e581615\support-core-ui-27.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\30a62641a02784f21323d5f8a3f4404c\support-compat-27.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\30a62641a02784f21323d5f8a3f4404c\support-compat-27.0.0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\43ebd292d9bef8dc77a0d6f73311b1c6\runtime-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\43ebd292d9bef8dc77a0d6f73311b1c6\runtime-1.0.0\AndroidManifest.xml:20:5-22:41
 INJECTED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml
 INJECTED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
@@ -111,8 +111,8 @@ INJECTED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\And
 		ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml
 meta-data#android.arch.lifecycle.VERSION
-ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\6cdcbe6e98585c1769731dffe48395a9\runtime-1.0.0\AndroidManifest.xml:25:9-27:47
+ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\43ebd292d9bef8dc77a0d6f73311b1c6\runtime-1.0.0\AndroidManifest.xml:25:9-27:47
 	android:value
-		ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\6cdcbe6e98585c1769731dffe48395a9\runtime-1.0.0\AndroidManifest.xml:27:13-44
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\43ebd292d9bef8dc77a0d6f73311b1c6\runtime-1.0.0\AndroidManifest.xml:27:13-44
 	android:name
-		ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\6cdcbe6e98585c1769731dffe48395a9\runtime-1.0.0\AndroidManifest.xml:26:13-58
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Chananya\.gradle\caches\transforms-2\files-2.1\43ebd292d9bef8dc77a0d6f73311b1c6\runtime-1.0.0\AndroidManifest.xml:26:13-58

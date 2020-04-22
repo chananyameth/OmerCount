@@ -11,4 +11,10 @@
 	<string name="past_day">past day</string>
 	<string name="new_day">new day</string>
 	<string name="leap">back to start</string>
+	<string name="first_time_settings">To use this app, please define your settings</string>
+	<string name="sefarad">Sefarad</string>
+	<string name="ashkecaz">Ashkenaz</string>
+	<string name="edot_hmizrakh">Edot Hamizrakh</string>
+	<string name="meth">Meth</string>
+	<string name="already_read">already read!</string>
 </resources>

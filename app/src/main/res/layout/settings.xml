@@ -1,37 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-	xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:orientation="vertical"
 	tools:context=".SettingsActivity">
 
+	<android.support.v7.widget.AppCompatSpinner
+		android:id="@+id/nusakh"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content" />
+
 	<CheckBox
 		android:id="@+id/activate_alarm"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:text="@string/activate_alarm" />
+		android:text="@string/activate_alarm"
+		android:onClick="activate_alarmClicked"/>
 
-	<RadioGroup
+	<android.support.v7.widget.LinearLayoutCompat
+		android:id="@+id/linearAlarms"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:orientation="vertical">
+		android:paddingStart="20dp">
 
-		<RadioButton
-			android:id="@+id/by_hour"
+		<RadioGroup
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:text="@string/by_hour"
-			android:onClick="onRadioButtonClicked" />
-		<RadioButton
-			android:id="@+id/relative_time"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:text="@string/relative_time"
-			android:onClick="onRadioButtonClicked" />
-	</RadioGroup>
+			android:orientation="vertical">
 
+			<RadioButton
+				android:id="@+id/by_hour"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:onClick="onRadioButtonClicked"
+				android:text="@string/by_hour" />
+
+			<RadioButton
+				android:id="@+id/relative_time"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:onClick="onRadioButtonClicked"
+				android:text="@string/relative_time" />
+		</RadioGroup>
+	</android.support.v7.widget.LinearLayoutCompat>
 
 </LinearLayout>

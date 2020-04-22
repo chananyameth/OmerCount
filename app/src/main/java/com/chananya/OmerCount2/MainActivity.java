@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -49,8 +50,20 @@ public class MainActivity extends Activity
 		getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
 		setContentView(R.layout.main);
 
+		firstTimeSetSettings();
 		initialize(_savedInstanceState);
 		determineShowDialog();
+	}
+
+	private void firstTimeSetSettings()
+	{
+		SharedPreferences sp = getSharedPreferences("settings", Activity.MODE_PRIVATE);
+		if(!sp.contains("version"))
+		{
+			toast(getString(R.string.first_time_settings));
+			Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
+			startActivity(intent);
+		}
 	}
 
 	private void initialize(Bundle _savedInstanceState)

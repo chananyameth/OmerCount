@@ -11,4 +11,10 @@
 	<string name="past_day">היום העובר</string>
 	<string name="new_day">היום החדש</string>
 	<string name="leap">בחזרה להתחלה</string>
+	<string name="first_time_settings">לשימוש ביישום אנא בחרו בהגדרות הרצויות</string>
+	<string name="sefarad">ספרד</string>
+	<string name="ashkecaz">אשכנז</string>
+	<string name="edot_hmizrakh">עדות המזרח</string>
+	<string name="meth">מט</string>
+	<string name="already_read">קראתי היום!</string>
 </resources>
