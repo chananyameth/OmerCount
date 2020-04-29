@@ -1,5 +1,5 @@
 <resources>
-	<string name="app_name" translatable="false">ספירת העומר</string>
+	<string name="app_name">ספירת העומר</string>
 	<string name="relative_time">יחסית לשקיעה</string>
 	<string name="by_hour">בשעה קבועה</string>
 	<string name="activate_alarm">הפעל התראות</string>
@@ -14,7 +14,7 @@
 	<string name="first_time_settings">לשימוש ביישום אנא בחרו בהגדרות הרצויות</string>
 	<string name="sefarad">ספרד</string>
 	<string name="ashkecaz">אשכנז</string>
-	<string name="edot_hmizrakh">עדות המזרח</string>
+	<string name="edot_hamizrakh">עדות המזרח</string>
 	<string name="meth">מט</string>
 	<string name="already_read">קראתי היום!</string>
 </resources>

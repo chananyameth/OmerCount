@@ -15,7 +15,7 @@ public class NotificationCreator
 	public static final String ACTION_COUNTED = "ACTION_COUNTED";
 	public static final String ACTION_NOTIFY = "ACTION_NOTIFY";
 	private String CHANNEL_ID = "NotificationCreatorId";
-	int Id;		// unique int for each notification - we have only one
+	int Id;        // unique int for each notification - we have only one
 	private Context context;
 
 	Intent contentIntent;
@@ -68,8 +68,8 @@ public class NotificationCreator
 				.setPriority(NotificationCompat.PRIORITY_DEFAULT)
 				.setContentIntent(contentPendingIntent) // clicking on the notification
 				.setAutoCancel(false)
-				.addAction(R.drawable.default_image, context.getString(R.string.later), snoozePendingIntent)		// clicking on 'later' button
-				.addAction(R.drawable.default_image, context.getString(R.string.mark_as_counted), snoozePendingIntent);		// clicking on 'later' button
+				.addAction(R.drawable.default_image, context.getString(R.string.later), snoozePendingIntent)        // clicking on 'later' button
+				.addAction(R.drawable.default_image, context.getString(R.string.mark_as_counted), snoozePendingIntent);        // clicking on 'later' button
 
 
 		notificationManager.notify(Id, builder.build());

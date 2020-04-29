@@ -13,7 +13,7 @@
 		android:layout_height="wrap_content"
 		android:onClick="Button1Click"/>
 
-	<android.support.v7.widget.AppCompatTextView
+	<TextView
 		android:id="@+id/date"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
@@ -24,7 +24,7 @@
 		android:textColor="#000000"
 		android:textSize="14sp"
 		android:textStyle="bold" />
-	<android.support.v7.widget.AppCompatTextView
+	<TextView
 		android:id="@+id/noOmer"
 		android:visibility="gone"
 		android:layout_width="wrap_content"
@@ -48,7 +48,7 @@
 			android:padding="8dp"
 			android:gravity="center_horizontal"
 			android:orientation="vertical">
-			<android.support.v7.widget.AppCompatTextView
+			<TextView
 				android:id="@+id/leshem_yichud_tv"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
@@ -57,7 +57,7 @@
 				android:text="לשם ייחוד.."
 				android:textSize="14sp"
 				android:textColor="#000000"/>
-			<android.support.v7.widget.AppCompatTextView
+			<TextView
 				android:id="@+id/beracha_tv"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
@@ -66,7 +66,7 @@
 				android:text="ברכה.."
 				android:textSize="16sp"
 				android:textColor="#000000"/>
-			<android.support.v7.widget.AppCompatTextView
+			<TextView
 				android:id="@+id/count_tv"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
@@ -76,7 +76,7 @@
 				android:textSize="25sp"
 				android:textColor="#000000"/>
 
-			<android.support.v7.widget.AppCompatTextView
+			<TextView
 				android:id="@+id/harachaman"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
@@ -85,7 +85,7 @@
 				android:text="הרחמן.."
 				android:textColor="#000000"
 				android:textSize="16sp" />
-			<android.support.v7.widget.AppCompatTextView
+			<TextView
 				android:id="@+id/lamnatzeach_tv"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
@@ -95,7 +95,7 @@
 				android:textSize="18sp"
 				android:textColor="#000000"
 				android:layout_gravity="right"/>
-			<android.support.v7.widget.AppCompatTextView
+			<TextView
 				android:id="@+id/ana_bekoach_tv"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
@@ -104,13 +104,11 @@
 				android:textSize="14sp"
 				android:textColor="#000000"
 				android:layout_gravity="right"/>
-			<android.support.v7.widget.AppCompatTextView
+			<TextView
 				android:id="@+id/ribono_tv"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:paddingLeft="8dp"
-				android:paddingTop="8dp"
-				android:paddingRight="8dp"
+				android:padding="8dp"
 				android:gravity="center_horizontal"
 				android:text="ריבונו של עולם.."
 				android:textSize="16sp"
@@ -124,7 +122,16 @@
 				android:checked="true"
 				android:textSize="12sp"
 				android:textColor="#000000"
-				android:layout_gravity="center_horizontal"/>
+				android:layout_gravity="center"/>
+			<TextView
+				android:id="@+id/aleynu_tv"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:gravity="center_horizontal"
+				android:text="עלינו לשבח.."
+				android:textSize="16sp"
+				android:textColor="#000000"/>
 		</LinearLayout>
 	</ScrollView>
 </LinearLayout>

@@ -6,7 +6,7 @@
 	android:orientation="vertical"
 	tools:context=".SettingsActivity">
 
-	<android.support.v7.widget.AppCompatSpinner
+	<Spinner
 		android:id="@+id/nusakh"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content" />
@@ -18,8 +18,9 @@
 		android:text="@string/activate_alarm"
 		android:onClick="activate_alarmClicked"/>
 
-	<android.support.v7.widget.LinearLayoutCompat
+	<LinearLayout
 		android:id="@+id/linearAlarms"
+		android:orientation="vertical"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:paddingStart="20dp">
@@ -43,6 +44,6 @@
 				android:onClick="onRadioButtonClicked"
 				android:text="@string/relative_time" />
 		</RadioGroup>
-	</android.support.v7.widget.LinearLayoutCompat>
+	</LinearLayout>
 
 </LinearLayout>

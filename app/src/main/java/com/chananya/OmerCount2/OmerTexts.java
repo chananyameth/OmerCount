@@ -31,6 +31,7 @@ public class OmerTexts
 	private String ribono_1;
 	private String sheba;
 	private String ribono_2;
+	private String aleynu;
 
 	private int day; // 1 to 49
 	private String[] sefirot;
@@ -66,7 +67,7 @@ public class OmerTexts
 	{
 		try {
 			JSONObject obj = new JSONObject(loadJSONFromAsset());
-			String our_nusach_string = obj.getString("our_nusach");
+			String our_nusach_string = obj.getString("meth");
 
 			JSONObject jo_our_nusach = new JSONObject(our_nusach_string);
 
@@ -79,6 +80,7 @@ public class OmerTexts
 			ribono_1 = jo_our_nusach.getString("ribono_1");
 			sheba = jo_our_nusach.getString("sheba");
 			ribono_2 = jo_our_nusach.getString("ribono_2");
+			aleynu = jo_our_nusach.getString("aleynu");
 
 			JSONArray ja_sefirot = jo_our_nusach.getJSONArray("sefirot");
 			for (int i = 0; i < ja_sefirot.length(); ++i) {
@@ -288,5 +290,10 @@ public class OmerTexts
 	public String getRibono()
 	{
 		return ribono_1 + " " + sheba() + " " + ribono_2;
+	}
+
+	public String getAleynu()
+	{
+		return aleynu;
 	}
 }

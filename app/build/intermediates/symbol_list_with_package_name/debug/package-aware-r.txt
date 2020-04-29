@@ -657,6 +657,7 @@ id activate_alarm
 id activity_chooser_view_content
 id add
 id alertTitle
+id aleynu_tv
 id always
 id ana_bekoach_tv
 id async
@@ -707,6 +708,7 @@ id leshem_yichud_tv
 id line1
 id line3
 id linear2
+id linearAlarms
 id listMode
 id list_item
 id message
@@ -719,6 +721,7 @@ id normal
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id nusakh
 id packed
 id parent
 id parentPanel
@@ -856,16 +859,22 @@ string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string activate_alarm
+string already_read
 string app_name
+string ashkecaz
 string by_hour
+string edot_hamizrakh
+string first_time_settings
 string help
 string later
 string leap
 string mark_as_counted
+string meth
 string new_day
 string past_day
 string relative_time
 string search_menu_title
+string sefarad
 string settings
 string status_bar_notification_info_overflow
 string tzais_warning
@@ -1033,9 +1042,6 @@ style Base_Widget_AppCompat_Spinner_Underlined
 style Base_Widget_AppCompat_TextView_SpinnerItem
 style Base_Widget_AppCompat_Toolbar
 style Base_Widget_AppCompat_Toolbar_Button_Navigation
-style FullScreen
-style NoActionBar
-style NoStatusBar
 style Platform_AppCompat
 style Platform_AppCompat_Light
 style Platform_ThemeOverlay_AppCompat

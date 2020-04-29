@@ -3,10 +3,12 @@ package com.chananya.OmerCount2;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,7 +20,7 @@ import android.widget.Toast;
 
 import java.util.Calendar;
 
-public class MainActivity extends Activity
+public class MainActivity extends AppCompatActivity
 {
 	//UI elements
 	private TextView date_tv;
@@ -32,6 +34,7 @@ public class MainActivity extends Activity
 	private TextView ana_bekoach_tv;
 	private TextView ribono_tv;
 	private CheckBox checkbox1;
+	private TextView aleynu_tv;
 
 	//navigation mode
 	private boolean isNavMode;
@@ -43,12 +46,15 @@ public class MainActivity extends Activity
 	private NotificationCreator nc;
 	private AlertDialog.Builder dialog;
 
+	public static Context applicationContext;
+
 	@Override
 	protected void onCreate(Bundle _savedInstanceState)
 	{
 		super.onCreate(_savedInstanceState);
-		getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
+		//getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
 		setContentView(R.layout.main);
+		applicationContext = getApplicationContext();
 
 		firstTimeSetSettings();
 		initialize(_savedInstanceState);
@@ -57,9 +63,9 @@ public class MainActivity extends Activity
 
 	private void firstTimeSetSettings()
 	{
-		SharedPreferences sp = getSharedPreferences("settings", Activity.MODE_PRIVATE);
-		if(!sp.contains("version"))
-		{
+		SharedPreferences sp = getApplicationContext().getSharedPreferences("settings", Activity.MODE_PRIVATE);
+
+		if (!sp.contains("version")) {
 			toast(getString(R.string.first_time_settings));
 			Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
 			startActivity(intent);
@@ -83,6 +89,7 @@ public class MainActivity extends Activity
 		lamnatzeach_tv = (TextView) findViewById(R.id.lamnatzeach_tv);
 		ana_bekoach_tv = (TextView) findViewById(R.id.ana_bekoach_tv);
 		ribono_tv = (TextView) findViewById(R.id.ribono_tv);
+		aleynu_tv = (TextView) findViewById(R.id.aleynu_tv);
 
 		checkbox1 = (CheckBox) findViewById(R.id.checkbox1);
 
@@ -222,6 +229,7 @@ public class MainActivity extends Activity
 			lamnatzeach_tv.setText(texts.getLamnatzeach());
 			ana_bekoach_tv.setText(texts.getAna_bekoach());
 			ribono_tv.setText(texts.getRibono());
+			aleynu_tv.setText(texts.getAleynu());
 		} else {
 			texts_vs.setVisibility(View.GONE);
 			noOmer.setVisibility(View.VISIBLE);

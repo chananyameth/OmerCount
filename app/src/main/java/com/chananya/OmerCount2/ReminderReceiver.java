@@ -10,16 +10,11 @@ public class ReminderReceiver extends BroadcastReceiver
 	@Override
 	public void onReceive(Context context, Intent intent)
 	{
-		if(intent.getAction() == NotificationCreator.ACTION_SNOOZE)
-		{
+		if (intent.getAction() == NotificationCreator.ACTION_SNOOZE) {
 
-		}
-		else if(intent.getAction() == NotificationCreator.ACTION_COUNTED)
-		{
+		} else if (intent.getAction() == NotificationCreator.ACTION_COUNTED) {
 
-		}
-		else if(intent.getAction() == NotificationCreator.ACTION_NOTIFY)
-		{
+		} else if (intent.getAction() == NotificationCreator.ACTION_NOTIFY) {
 
 		}
 

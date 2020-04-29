@@ -14,7 +14,8 @@
 	<string name="first_time_settings">To use this app, please define your settings</string>
 	<string name="sefarad">Sefarad</string>
 	<string name="ashkecaz">Ashkenaz</string>
-	<string name="edot_hmizrakh">Edot Hamizrakh</string>
+	<string name="edot_hamizrakh">Edot Hamizrakh</string>
 	<string name="meth">Meth</string>
 	<string name="already_read">already read!</string>
+	<string name="app_name">Sefirat HaOmer</string>
 </resources>

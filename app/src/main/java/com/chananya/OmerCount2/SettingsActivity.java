@@ -1,120 +1,101 @@
 package com.chananya.OmerCount2;
 
-import android.app.Activity;
-import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.support.v7.widget.AppCompatSpinner;
-import android.support.v7.widget.LinearLayoutCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.Toast;
 
-import net.sourceforge.zmanim.util.GeoLocation;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.TimeZone;
-
-enum Nusakh
-{
-	SEFARAD,
-	ASHKENAZ,
-	EDOT_HAMIZRAKH,
-	METH
-}
-
-public class SettingsActivity extends Activity
+public class SettingsActivity extends AppCompatActivity
 {
 	// settings vars: initialize to -1 or "", and on the first access load from SharedPreferences.
 	// when activity stops: save all settings vars to SharedPreferences.
 
-	private SharedPreferences sp;
-
-	// vars:
-	private Nusakh nusakh;
-	private boolean isAlarmActive;
-	private int alarmMode;
+	private SettingsManager sm;
 
 	// constants:
 	public static final int ALARM_MODE_HOUR = 0;
 	public static final int ALARM_MODE_RELATIVE = 1;
 
 	// views:
-	private AppCompatSpinner nusakh_sp;
-	private CheckBox activate;
-	private LinearLayoutCompat linearAlarms;
+	private Spinner nusakh_sp;
+	private CheckBox activate_alarm_cb;
+	private LinearLayout linearAlarms;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.settings);
+		sm = SettingsManager.getInstance();
 
-		sp = getSharedPreferences("settings", Activity.MODE_PRIVATE);
 		setSpinner();
-		activate = findViewById(R.id.activate_alarm);
+		activate_alarm_cb = findViewById(R.id.activate_alarm);
 		linearAlarms = findViewById(R.id.linearAlarms);
+
+		applySettingsFromSM();
+	}
+
+	private void applySettingsFromSM()
+	{
+		nusakh_sp.setSelection(sm.nusakh);
+		activate_alarm_cb.setChecked(sm.isAlarmActive);
+		enableDisableView(linearAlarms, sm.isAlarmActive);
+
+		//TODO: set alarm settings
 	}
 
 	private void setSpinner()
 	{
 		nusakh_sp = findViewById(R.id.nusakh);
+		nusakh_sp.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, SettingsManager.nusakhList));
+		nusakh_sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+		{
+			@Override
+			public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id)
+			{
+				//TODO
+			}
 
-		List<String> nusakh_list = new ArrayList<String>();
-		nusakh_list.add(getString(R.string.sefarad));
-		nusakh_list.add(getString(R.string.ashkecaz));
-		nusakh_list.add(getString(R.string.edot_hmizrakh));
-		nusakh_list.add(getString(R.string.meth));
-
-		ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nusakh_list);
-
-		dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-		nusakh_sp.setAdapter(dataAdapter);
+			@Override
+			public void onNothingSelected(AdapterView<?> parentView)
+			{
+			}
+		});
 	}
 
 	@Override
 	protected void onStop()
 	{
-		try {
-			sp.edit().putInt("version", getPackageManager().getPackageInfo(getPackageName(), 0).versionCode); //TODO: change version
-			toast(String.valueOf(getPackageManager().getPackageInfo(getPackageName(), 0).versionCode));
-		} catch (PackageManager.NameNotFoundException e) {
-			e.printStackTrace();
-		}
+		sm.nusakh = nusakh_sp.getSelectedItemPosition();
+		sm.isAlarmActive = activate_alarm_cb.isChecked();
+		//TODO: save alarm mode
 
-		sp.edit().putString("nusakh", nusakh_sp.getSelectedItem().toString());
-		toast(nusakh_sp.getSelectedItem().toString());
-
-		sp.edit().putBoolean("activate alarm", activate.isChecked());
-
-		//TODO: save alarm settings anyway
-
-		sp.edit().commit();
+		sm.saveSettings();
 		super.onStop();
 	}
 
-	public static GeoLocation getLocation()
-	{
-		// TODO: add more places
-		String locationName = "Jerusalem, IL";
-		double latitude = 31.771959; // Jerusalem, IL
-		double longitude = 35.217018; // Jerusalem, IL
-		double elevation = 798; // optional elevation correction in Meters
-		TimeZone timeZone = TimeZone.getTimeZone("Israel");
-		GeoLocation location = new GeoLocation(locationName, latitude, longitude, elevation, timeZone);
-		return location;
-	}
 
 	public void activate_alarmClicked(View view)
 	{
-		CheckBox c = (CheckBox) view;
-		if (c.isChecked())
-			linearAlarms.setClickable(true);
-		else
-			linearAlarms.setClickable(false);
+		enableDisableView(linearAlarms, ((CheckBox) view).isChecked());
+	}
+
+	private void enableDisableView(View view, boolean enabled)
+	{
+		view.setEnabled(enabled);
+
+		if (view instanceof ViewGroup) {
+			ViewGroup group = (ViewGroup) view;
+
+			for (int idx = 0; idx < group.getChildCount(); idx++)
+				enableDisableView(group.getChildAt(idx), enabled);
+		}
 	}
 
 	public void onRadioButtonClicked(View view)

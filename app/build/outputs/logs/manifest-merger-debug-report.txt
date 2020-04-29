@@ -39,7 +39,7 @@ MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Chananya\.gradle\cac
 	android:supportsRtl
 		ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:10:3-29
 	android:label
-		ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:8:3-30
+		ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:8:3-35
 	android:largeHeap
 		ADDED from C:\Chananya\ProgrammingProjects\Android\OmerCount\app\src\main\AndroidManifest.xml:9:3-27
 	android:icon

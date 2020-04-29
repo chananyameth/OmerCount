@@ -4,16 +4,15 @@ import net.sourceforge.zmanim.ComplexZmanimCalendar;
 import net.sourceforge.zmanim.hebrewcalendar.HebrewDateFormatter;
 import net.sourceforge.zmanim.hebrewcalendar.JewishCalendar;
 import net.sourceforge.zmanim.hebrewcalendar.JewishDate;
-import net.sourceforge.zmanim.util.GeoLocation;
 
 import java.util.Calendar;
 import java.util.Date;
-import java.util.TimeZone;
 
 import static java.lang.StrictMath.abs;
 
 public class JewishTimes
 {
+	private SettingsManager sm;
 	private ComplexZmanimCalendar czc;
 	private JewishCalendar jc;
 	private JewishDate jd;
@@ -21,7 +20,8 @@ public class JewishTimes
 
 	public JewishTimes()
 	{
-		czc = new ComplexZmanimCalendar(SettingsActivity.getLocation());
+		sm = SettingsManager.getInstance();
+		czc = new ComplexZmanimCalendar(sm.getLocation());
 		jc = new JewishCalendar(nowD());
 		jd = new JewishDate(nowD());
 		hdf = new HebrewDateFormatter();
@@ -30,18 +30,18 @@ public class JewishTimes
 
 	private ComplexZmanimCalendar getCzc()
 	{
-		czc.setCalendar(Calendar.getInstance(SettingsActivity.getLocation().getTimeZone()));
+		czc.setCalendar(Calendar.getInstance(sm.getLocation().getTimeZone()));
 		return czc;
 	}
 
 	public Date nowD()
 	{
-		return Calendar.getInstance(SettingsActivity.getLocation().getTimeZone()).getTime();
+		return Calendar.getInstance(sm.getLocation().getTimeZone()).getTime();
 	}
 
 	public Calendar nowC()
 	{
-		return Calendar.getInstance(SettingsActivity.getLocation().getTimeZone());
+		return Calendar.getInstance(sm.getLocation().getTimeZone());
 	}
 
 	public Calendar tommorowOf(Calendar c)
